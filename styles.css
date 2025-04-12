@@ -207,6 +207,7 @@ nav {
 /* About Section */
 .about-content {
     display: flex;
+    text-align: justify;
     align-items: center;
     gap: 50px;
 }
@@ -296,6 +297,7 @@ nav {
 
 .project-info {
     padding: 20px;
+    text-align: justify;
 }
 
 .project-links {
@@ -439,3 +441,40 @@ footer {
         font-size: 1.5rem;
     }
 }
+
+#chatbox {
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    overflow-y: scroll;
+    margin-bottom: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  #userInput {
+    width: 75%;
+    padding: 10px;
+    border: 1px solid #aaa;
+  }
+  #sendBtn {
+    width: 20%;
+    padding: 10px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  #sendBtn:hover {
+    background: #0056b3;
+  }
+  .message {
+    margin: 5px 0;
+  }
+  .bot {
+    color: green;
+  }
+  .user {
+    color: blue;
+  }
