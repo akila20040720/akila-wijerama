@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="images/1.png" type="image/png">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
     <header>
@@ -32,15 +33,35 @@
     </header>
 
     <section id="home" class="hero">
+
+        <video autoplay muted loop playsinline class="background-video">
+            <source src="Video/intro version 2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+
+        </video>
         <div class="container">
             <div class="hero-content">
                 <h1>Hi, I'm <span>Akila Wijerama</span></h1>
                 <h2><span id="typed-text">Web Developer</span></h2>
                 <p>Transforming Visions into a reality</p>
-                <a href="#projects" class="btn">View My Work</a>
-            </div>
-            
+    <a href="https://drive.google.com/file/d/12FmDKV2Oj9gTOyt0GiIcZQIiAjF6-6Tt/view?usp=drive_link" target="_blank">
+        <button>
+        Download CV
+        <div id="clip">
+            <div id="leftTop" class="corner"></div>
+            <div id="rightBottom" class="corner"></div>
+            <div id="rightTop" class="corner"></div>
+            <div id="leftBottom" class="corner"></div>
         </div>
+        <span id="rightArrow" class="arrow"></span>
+        <span id="leftArrow" class="arrow"></span>
+    </button>
+    </a>
+
+                
+
+        
+
     </section>
 
     <section id="about" class="about">
@@ -273,7 +294,7 @@
 
     <script>
     const typed = new Typed("#typed-text", {
-    strings: ["Web Developer", "UI/UX Designer", "Freelancer"],
+    strings: ["Web Developer", "UI/UX Designer", "Freelancer", "Machine Learning", "Deep Learning"],
     typeSpeed: 100,
     backSpeed: 50,
     loop: true,
@@ -311,5 +332,7 @@
     }
   });
     </script>
+
+    
 </body>
 </html>
