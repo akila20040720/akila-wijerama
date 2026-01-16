@@ -4,10 +4,52 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>akila-wijerama</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE0p4ylG6kS1tqfKQJsteUms9Up7ZK2aJ6k2P3lzLOlCw8d7A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Akila Wijerama | Personal Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <!-- Botpress Scripts -->
+    <script src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2025/04/12/09/20250412090703-OH8451QT.js"></script>
+    <script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
+    <script>
+      /* paste this line in verbatim */
+      window.formbutton=window.formbutton||function(){(formbutton.q=formbutton.q||[]).push(arguments)};
+      /* customize formbutton below*/     
+      formbutton("create", {
+        action: "https://formspree.io/f/xldjzrgj",
+        title: "Get in touch",
+        fields: [
+          { 
+            type: "email", 
+            label: "Email:", 
+            name: "email",
+            required: true,
+            placeholder: "your@email.com"
+          },
+          {
+            type: "textarea",
+            label: "How Can I help you?",
+            name: "message",
+            placeholder: "Your message",
+          },
+          { type: "submit" }      
+        ],
+        styles: {
+          title: {
+            backgroundColor: "#2c53c1"
+          },
+          button: {
+            backgroundColor: "#2c53c1"
+          }
+        }
+      });
+    </script>
   </body>
 </html>
