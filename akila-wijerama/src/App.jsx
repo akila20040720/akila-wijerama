@@ -1,79 +1,8 @@
 import { useEffect, useState, useMemo } from 'react'
 import './App.css'
+import data from './data.json'
 
-const skills = [
-  { name: 'HTML5', icon: 'fab fa-html5' },
-  { name: 'CSS3', icon: 'fab fa-css3-alt' },
-  { name: 'JavaScript', icon: 'fab fa-js' },
-  { name: 'Java', icon: 'fab fa-java' },
-  { name: 'Node.js', icon: 'fab fa-node-js' },
-  { name: 'Python', icon: 'fa-brands fa-python' },
-]
-
-const projects = [
-  {
-    title: 'Sustainfy Website',
-    description: 'Implemented website for Sustainable Cities & Communities under the SDG goal 11',
-    image: '/Images/image.png',
-    live: 'https://sustainify.github.io/splash.html',
-    code: '#',
-  },
-  {
-    title: 'Traffic Analyser Project on Python',
-    description: 'Using Python tkinter made histogram for analyse traffic data ',
-    image: '/Images/Screenshot 2024-12-20 130645.png',
-    live: '',
-    code: '#',
-  },
-  {
-    title: 'Theater APP Project on Java',
-    description: 'Made Theater ticket booking system on Java',
-    image: '/Images/Screenshot 2025-04-10 150201.png',
-    live: '#',
-    code: '#',
-  },
-  {
-    title: 'Research on Quantum Computing',
-    description: 'Industry impacts on Quantum Computing',
-    image: '/Images/OIP.jpeg',
-    live: 'https://www.icloud.com/iclouddrive/0d2vdR-czeKC9CXWrAwJjq6TA#w2121346',
-    code: '',
-  },
-]
-
-const education = [
-  {
-    title: 'Computer Science Undergraduate - University of Westminster(IIT Sri Lanka) (Sep-2024 - Present)',
-    description:
-      '"I am currently pursuing a degree in Computer Science at the University of Westminster, with a strong focus on Web Development. My academic journey and personal interests have aligned toward front-end and full-stack development. I am actively working on various web design and development projects to deepen my practical skills, explore modern web technologies, and build a solid foundation for a career in the tech industry."',
-    image: '/Images/university_of_westminster_cover.jpg',
-    link: 'https://www.westminster.ac.uk/',
-  },
-  {
-    title: 'Royal College Colombo 07 (Feb-2010 - Jan 2024)',
-    description:
-      '"I completed my school education at Royal College, Colombo 07, where I studied from 2010 to 2024. I successfully passed my GCE Advanced Level examination in the Physical Science stream, with subjects including Combined Mathematics, Chemistry, and Physics. This academic focus helped me develop strong analytical and critical thinking skills. Prior to that, I achieved excellent results at the GCE Ordinary Level examination, obtaining 8 A\'s and 1 B. My deep interest in IT inspired me to pursue higher education in Computer Science. In addition to academics, I was actively involved in extracurricular activities—I represented my school in rugby and was a member of the Murclive Media Unit, where I contributed to media production and played key roles in organizing school events."',
-    image: '/Images/Royal.jpg',
-    link: 'https://www.bing.com/ck/a?!&&p=3364e6cf44eec741490fb105ae316fb6e06a636e25de65214c1294a6a87e15d4JmltdHM9MTc0NDI0MzIwMA&ptn=3&ver=2&hsh=4&fclid=275ad376-1dd0-6c69-0cd8-c6ee1cd06d81&psq=royal+college+colombo+7&u=a1aHR0cHM6Ly9yb3lhbGNvbGxlZ2UubGsv&ntb=1',
-  },
-]
-
-const experience = [
-  {
-    company: 'Dialog Axiata PLC',
-    role: 'CSA (Outbound) Feb-2024 - Jul 2024',
-    description:
-      'As an Outbound CSA at Dialog Axiata, I consistently exceeded monthly sales targets and key performance indicators (KPIs) by delivering high-quality service, building strong customer relationships, and maintaining in-depth product knowledge. I was responsible for driving sales, resolving customer concerns, and supporting financial and billing operations across multiple platforms. This role sharpened my communication, multitasking, and problem-solving skills while giving me a strong foundation in CRM systems, fintech applications, and customer-focused sales strategies.',
-    image: '/Images/fe1bc3bee1b40301c1a4204fd5429d85.jpg',
-    proof: 'https://www.icloud.com/iclouddrive/0ea9g4vPfX0qhSBkh0mDZz2NQ',
-  },
-]
-
-const contactInfo = [
-  { icon: 'fas fa-envelope', label: 'akila.wijerama@icloud.com' },
-  { icon: 'fas fa-phone', label: '+94-767726096' },
-  { icon: 'fas fa-map-marker-alt', label: 'Mount Lavinia, Sri Lanka' },
-]
+const { skills, projects, education, experience, contactInfo } = data
 
 // Typed Strings from portfolio.html
 const typedWords = ["ML Engineer", "Frontend Automation", "UI/UX Designer", "Data Analyst"]
