@@ -160,7 +160,7 @@ function App() {
             <h2 className="hero-subtitle">Transforming Visions into Reality</h2>
 
             <div className="hero-image-wrapper">
-              <img src="/Images/pro.png" alt="Akila Wijerama" />
+              <img src="Images/pro.png" alt="Akila Wijerama" />
             </div>
 
             <div className="hero-actions">
@@ -193,7 +193,7 @@ function App() {
               </div>
             </div>
             <div className="about-image">
-              <img src="/Images/pro.png" alt="About Image" />
+              <img src="Images/about.png" alt="About Image" />
             </div>
           </div>
         </div>
