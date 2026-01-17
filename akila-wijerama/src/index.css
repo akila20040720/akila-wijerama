@@ -154,8 +154,13 @@ nav {
     align-items: center;
     justify-content: center;
     position: relative;
-    padding-top: 100px;
     overflow: hidden;
+}
+
+.hero .container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
 }
 
 .hero-background-text {
@@ -180,6 +185,10 @@ nav {
     text-align: center;
     z-index: 2;
     max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero-main-title {
@@ -224,9 +233,8 @@ nav {
     position: relative;
     max-width: 500px;
     border-radius: 200px 200px 0 0;
-    /* Arch shape */
     overflow: hidden;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+   
 }
 
 .hero-image-wrapper img {
