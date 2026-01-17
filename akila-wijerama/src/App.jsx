@@ -76,37 +76,22 @@ const contactInfo = [
 ]
 
 // Typed Strings from portfolio.html
-const typedWords = ["Web Developer", "UI/UX Designer", "Freelancer", "Machine Learning", "Deep Learning"]
+const typedWords = ["ML Engineer", "Frontend Automation", "UI/UX Designer", "Data Analyst"]
 
 function App() {
   const [isNavOpen, setIsNavOpen] = useState(false)
+
+  // Typing Effect State
   const [typedText, setTypedText] = useState('')
   const [wordIndex, setWordIndex] = useState(0)
   const [charIndex, setCharIndex] = useState(0)
   const [isDeleting, setIsDeleting] = useState(false)
 
-  // Theme State
-  const [theme, setTheme] = useState('dark')
-
-  useEffect(() => {
-    // Apply theme class to body
-    if (theme === 'light') {
-      document.body.classList.add('light-theme')
-    } else {
-      document.body.classList.remove('light-theme')
-    }
-  }, [theme])
-
-  const toggleTheme = () => {
-    setTheme(prev => prev === 'dark' ? 'light' : 'dark')
-  }
-
-  // Typing Effect
   const currentWord = useMemo(() => typedWords[wordIndex % typedWords.length], [wordIndex])
 
   useEffect(() => {
-    const typingSpeed = isDeleting ? 50 : 100 // Speed match
-    const pauseTime = 2000
+    const typingSpeed = isDeleting ? 40 : 80 // Smoother speed
+    const pauseTime = 1500
 
     const handler = setTimeout(() => {
       if (!isDeleting && charIndex <= currentWord.length) {
@@ -137,57 +122,55 @@ function App() {
       <header>
         <div className="container">
           <nav>
-            <div className="logo">Akila Wijerama</div>
+            {/* Split Nav Left */}
+            <div className={`nav-split left ${isNavOpen ? 'active' : ''}`}>
+              <a href="#home" className="nav-link" onClick={closeNav}>Home</a>
+              <a href="#about" className="nav-link" onClick={closeNav}>About</a>
+              <a href="#skills" className="nav-link" onClick={closeNav}>Skills</a>
+            </div>
 
-            <ul className={`nav-links ${isNavOpen ? 'active' : ''}`}>
-              <li><a href="#home" onClick={closeNav}>Home</a></li>
-              <li><a href="#about" onClick={closeNav}>About</a></li>
-              <li><a href="#skills" onClick={closeNav}>Skills</a></li>
-              <li><a href="#projects" onClick={closeNav}>Projects</a></li>
-              <li><a href="#Education" onClick={closeNav}>Education</a></li>
-              <li><a href="#Experience" onClick={closeNav}>Experience</a></li>
-              <li><a href="#contact" onClick={closeNav}>Contact</a></li>
-              <li>
-                <button className="theme-toggle" onClick={toggleTheme}>
-                  <i className={theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon'}></i>
-                </button>
-              </li>
-            </ul>
+            {/* Logo Center */}
+            <div className="logo-container">
+              <div className="logo">AKILA</div>
+            </div>
 
-            <div className={`burger ${isNavOpen ? 'active' : ''}`} onClick={() => setIsNavOpen(!isNavOpen)}>
-              <div className="line1"></div>
-              <div className="line2"></div>
-              <div className="line3"></div>
+            {/* Split Nav Right */}
+            <div className={`nav-split right ${isNavOpen ? 'active' : ''}`}>
+              <a href="#projects" className="nav-link" onClick={closeNav}>Projects</a>
+              <a href="#Experience" className="nav-link" onClick={closeNav}>Experience</a>
+              <a href="#contact" className="nav-link" onClick={closeNav}>Contact</a>
+            </div>
+
+            {/* Mobile Burger */}
+            <div className="burger" onClick={() => setIsNavOpen(!isNavOpen)}>
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
           </nav>
         </div>
       </header>
 
       <section id="home" className="hero">
-        <video autoPlay muted loop playsInline className="background-video">
-          <source src="/Video/intro version 2.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        <div className="hero-background-text">DEVELOPER</div>
 
         <div className="container">
           <div className="hero-content">
-            <h1>Hi, I'm <span>Akila Wijerama</span></h1>
-            <h2><span id="typed-text">{typedText}</span><span style={{ color: 'var(--primary-color)' }}>|</span></h2>
-            <p>Transforming Visions into a reality</p>
+            <h1 className="hero-main-title">{typedText}<span className="cursor">|</span></h1>
+            <h2 className="hero-subtitle">Transforming Visions into Reality</h2>
 
-            <a href="https://drive.google.com/file/d/12FmDKV2Oj9gTOyt0GiIcZQIiAjF6-6Tt/view?usp=drive_link" target="_blank" rel="noreferrer">
-              <button className="cv-btn">
-                Download CV
-                <div id="clip">
-                  <div id="leftTop" className="corner"></div>
-                  <div id="rightBottom" className="corner"></div>
-                  <div id="rightTop" className="corner"></div>
-                  <div id="leftBottom" className="corner"></div>
-                </div>
-                <span id="rightArrow" className="arrow"></span>
-                <span id="leftArrow" className="arrow"></span>
-              </button>
-            </a>
+            <div className="hero-image-wrapper">
+              <img src="/Images/pro.j" alt="Akila Wijerama" />
+            </div>
+
+            <div className="hero-actions">
+              <a href="https://drive.google.com/file/d/12FmDKV2Oj9gTOyt0GiIcZQIiAjF6-6Tt/view?usp=drive_link" target="_blank" rel="noreferrer">
+                <button className="btn-primary">Download CV</button>
+              </a>
+              <a href="#contact">
+                <button className="btn-secondary">Let's Talk</button>
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -210,7 +193,7 @@ function App() {
               </div>
             </div>
             <div className="about-image">
-              <img src="/Images/pro.png" alt="About Image" />
+              <img src="/Images/akilaPro.png" alt="About Image" />
             </div>
           </div>
         </div>
@@ -244,7 +227,7 @@ function App() {
                   <p>{project.description}</p>
                   <div className="project-links">
                     {project.live && <a href={project.live} target="_blank" rel="noreferrer"><i className="fas fa-external-link-alt"></i> Live Demo</a>}
-                    {project.code && <a href={project.code} style={{ color: theme === 'light' ? 'var(--primary-color)' : 'white' }}><i className="fab fa-github"></i> Code</a>}
+                    {project.code && <a href={project.code}><i className="fab fa-github"></i> Code</a>}
                   </div>
                 </div>
               </div>
@@ -314,7 +297,7 @@ function App() {
               <div className="form-group">
                 <textarea name="message" placeholder="Your Message" required></textarea>
               </div>
-              <button type="submit" className="btn">Send Message</button>
+              <button type="submit" className="btn-primary">Send Message</button>
             </form>
           </div>
         </div>
