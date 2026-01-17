@@ -25,7 +25,7 @@
       "title": "Vehicle Analytics Dashboard",
       "description": "Vehicle market prediction web application using Machine Learning",
       "image": "/Images/Projects/analyticsdashboard.png",
-      "live": "https://info-autoinsight.vercel.app/",
+      "live": "https://autoinsight-bay.vercel.app/",
       "code": "#"
     },
 
