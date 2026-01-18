@@ -115,11 +115,7 @@ function App() {
                 When I'm not coding, I enjoy staying up-to-date on the latest tech trends and pushing the limits of what I can create. You can find me experimenting with new tools, working on my personal projects, or helping others overcome challenges in tech.
                 Feel free to explore my website to see some of my work and get in touch if you'd like to collaborate or chat about technology!</p>
 
-              <div className="social-links">
-                <a href="https://github.com/akila20040720" target="_blank" rel="noreferrer"><i className="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/akila-wijerama-7b9884202/" target="_blank" rel="noreferrer"><i className="fab fa-linkedin"></i></a>
-                <a href="https://www.instagram.com/akila_wijerama/" target="_blank" rel="noreferrer"><i className="fab fa-instagram"></i></a>
-              </div>
+              
             </div>
             <div className="about-image">
               <img src="Images/about.png" alt="About Image" />
@@ -127,6 +123,8 @@ function App() {
           </div>
         </div>
       </section>
+
+      
 
       <section id="skills" className="skills">
         <div className="container">

@@ -618,17 +618,19 @@ footer {
     }
 
     .social-links {
-        gap: 15px;
+        gap: 40px;
+        padding: 10px 0;
     }
 
     .social-links a {
         font-size: 1.5rem;
+        gap: 10px;
     }
 
     /* Skills Section */
     .skills-container {
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        gap: 40px;
     }
 
     .skill {
@@ -782,14 +784,14 @@ footer {
         line-height: 1.6;
     }
 
-    .social-links {
-        gap: 12px;
-    }
+   .socials{
+        gap: 30px;
+   }
 
-    .social-links a {
-        font-size: 1.3rem;
-    }
-
+   .socials a {
+        font-size: 1.2rem;
+        padding: 100px;
+   }
     /* Skills Section */
     .skills-container {
         grid-template-columns: 1fr;
